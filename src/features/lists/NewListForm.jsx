@@ -53,7 +53,7 @@ const NewListForm = () => {
             <Field
               type="text"
               name="text"
-              value={values.text}
+              value={values.text.trim()}
               className={cn(
                 'form-control',
                 !!touched.text && (isValid ? 'is-valid' : 'is-invalid')
