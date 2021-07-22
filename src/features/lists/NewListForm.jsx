@@ -19,7 +19,7 @@ const NewListForm = () => {
   const addList = async ({ text }, { resetForm }) => {
     try {
       const url = routes.lists();
-      const { data } = await axios.post(url, { name: text });
+      const { data } = await axios.post(url, { name: text.trim() });
       dispatch(listsActions.add(data));
       dispatch(setCurrentListId(data.id));
       resetForm();
