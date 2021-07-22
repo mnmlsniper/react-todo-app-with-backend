@@ -37,7 +37,8 @@ export default (app, defaultState = {}) => {
       reply.view('index.pug', { gon: state });
     })
     .post('/api/v1/lists', (req, reply) => {
-      const { name } = req.body;
+      let { name } = req.body;
+      name = name.trim();
       const list = {
         name,
         removable: true,
